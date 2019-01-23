@@ -1,0 +1,15 @@
+package com.bridgelabz.servlets;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginServlet extends HttpServlet{
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) {
+		String name = request.getParameter("name");
+		System.out.println(name);
+		String password = request.getParameter("password");
+		System.out.println(password);
+	}
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Logout</title>
+</head>
+<body>
+
+<form method="post" action="logout">
+
+ <button type="submit" class="logout">Logout</button>
+ </form>
+</body>
+</html>

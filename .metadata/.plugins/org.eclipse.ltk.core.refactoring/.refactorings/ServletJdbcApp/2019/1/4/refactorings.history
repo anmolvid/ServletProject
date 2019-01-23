@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ServletJdbcApp/src/com/bridgeit/utli&apos; to &apos;dbutli&apos;" description="Rename resource &apos;utli&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/bridgeit/utli" name="dbutli" stamp="1548214597544" updateReferences="true"/>
+</session>

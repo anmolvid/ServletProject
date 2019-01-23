@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Good Morning</title>
+
+</head>
+<body>
+<form method="post", action="login">
+<input type="text" name="name">
+<button type="submit" value="Login"></button>
+</form>
+</body>
+</html>

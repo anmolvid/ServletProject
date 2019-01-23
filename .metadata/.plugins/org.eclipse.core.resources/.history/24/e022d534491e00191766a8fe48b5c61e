@@ -1,0 +1,33 @@
+package com.bridgelabz.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginServlet extends HttpServlet{
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		String username = request.getParameter("username");
+		System.out.println(username);
+		String password = request.getParameter("password");
+		System.out.println(password);
+		response.setContentType("text/html");  
+	    PrintWriter out = response.getWriter();  
+	          
+	    if(username.equals("anmol")){  
+	        RequestDispatcher rd=request.getRequestDispatcher("vid");  
+	        rd.forward(request, response);  
+	    }  
+	    else{  
+	        out.print("Sorry UserName or Password Error!");  
+	        RequestDispatcher rd=request.getRequestDispatcher("/index.html");  
+	        rd.include(request, response);  
+	                      
+	        }   
+	}
+}
