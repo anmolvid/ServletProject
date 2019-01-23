@@ -1,1 +1,5 @@
 1548214597544	Rename resource 'utli'
+1548235226620	Move 'index.html' to 'WebContent'
+1548235235310	Move 'Logout.html' to 'WebContent'
+1548235264350	Move 'Registration.html' to 'WebContent'
+1548235387794	Move 'Registration.java' to 'servlet'
