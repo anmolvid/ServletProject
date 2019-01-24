@@ -6,3 +6,5 @@
 2019-01-23 15:38:14,273 [Worker-122: Advanced source lookup job] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-catalina/8.5.37/tomcat-catalina-8.5.37-sources.jar
 2019-01-23 15:38:50,702 [Worker-121: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/8.5.37/tomcat-servlet-api-8.5.37-sources.jar
 2019-01-23 15:38:52,259 [Worker-121: Debug Source Lookup] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/apache/tomcat/tomcat-servlet-api/8.5.37/tomcat-servlet-api-8.5.37-sources.jar
+2019-01-24 10:31:25,991 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2019-01-24 10:31:49,117 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Updating Gradle version information cache failed. Using outdated cache.

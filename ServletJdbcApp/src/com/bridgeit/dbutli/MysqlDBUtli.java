@@ -49,6 +49,7 @@ public static Connection getMySQLConnection(String hostName, String dbName,
 	   connection.close();
 	}
 		public static boolean login(User user) throws ClassNotFoundException, SQLException {
+			
 			String query2="select * from User where email=? and password=?";
 			Connection connection=getMySQLConnection();
 			PreparedStatement preparedStatement=connection.prepareStatement(query2);
@@ -56,11 +57,14 @@ public static Connection getMySQLConnection(String hostName, String dbName,
 			preparedStatement.setString(2, user.getPassword());
 			ResultSet resultSet=preparedStatement.executeQuery();
 			while( resultSet.next()){
+//				if(resultSet.getString(5).equals(user.getEmail()) && resultSet.getString(6).equals(user.getPassword()))
+//				{
 				return true;
+//				}
 			}
 			connection.close();
-			preparedStatement.close();
-			resultSet.close();
+//			preparedStatement.close();
+//			resultSet.close();
 			return false;
 				
 			
