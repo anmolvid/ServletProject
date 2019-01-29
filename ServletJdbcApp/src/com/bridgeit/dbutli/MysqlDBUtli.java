@@ -48,7 +48,7 @@ public static Connection getMySQLConnection(String hostName, String dbName,
 	   preparedStatement.execute();
 	   connection.close();
 	}
-		public static boolean login(User user) throws ClassNotFoundException, SQLException {
+		public static User login(User user) throws ClassNotFoundException, SQLException {
 			
 			String query2="select * from User where email=? and password=?";
 			Connection connection=getMySQLConnection();
@@ -57,19 +57,37 @@ public static Connection getMySQLConnection(String hostName, String dbName,
 			preparedStatement.setString(2, user.getPassword());
 			ResultSet resultSet=preparedStatement.executeQuery();
 			while( resultSet.next()){
-//				if(resultSet.getString(5).equals(user.getEmail()) && resultSet.getString(6).equals(user.getPassword()))
-//				{
-				return true;
+				User users=new User();
+				users.setFirstname(resultSet.getString(2));
+				users.setLastname(resultSet.getString(3));
+				users.setContactno(resultSet.getLong(4));
+				users.setEmail(resultSet.getString(5));
+				users.setPassword(resultSet.getString(6));
+		
+				return users;
 //				}
 			}
 			connection.close();
-//			preparedStatement.close();
-//			resultSet.close();
-			return false;
+		preparedStatement.close();
+			resultSet.close();
+			return null;
+		}
 				
+			public static int edit(User user) throws ClassNotFoundException, SQLException {
+		        String updateQuery="update User set firstName=?, lastName=?, contact=? where emailid=?";
+		        int updatedRows = 0;
+		        Connection connection= getMySQLConnection();
+		        PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+		        preparedStatement.setString(1, user.getFirstname());
+		        preparedStatement.setString(2, user.getLastname());
+		        preparedStatement.setLong(3, user.getContactno());
+		        preparedStatement.setString(4, user.getEmail());
+		        updatedRows = preparedStatement.executeUpdate();
+		        connection.close();
+		        return updatedRows;
+		    }	
 			
-			
-		            
+}	            
 		        
 			
 			
@@ -82,7 +100,7 @@ public static Connection getMySQLConnection(String hostName, String dbName,
 			
 			
 			
-		} 
-	}
+	
+	
 
 

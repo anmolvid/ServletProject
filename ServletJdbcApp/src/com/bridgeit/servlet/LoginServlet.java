@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,12 +24,18 @@ public class LoginServlet extends HttpServlet {
 		user.setEmail(username);
 		user.setPassword(password);
 		try {
-			boolean result = MysqlDBUtli.login(user);
-			if (result) {
+			User result = MysqlDBUtli.login(user);
+			if (result!=null) {
 				HttpSession session = request.getSession();
-				session.setAttribute("name", username);
-				RequestDispatcher rd = request.getRequestDispatcher("/Logout.html");
-				rd.forward(request, response);
+				session.setAttribute("user1", result);
+//				RequestDispatcher rd = request.getRequestDispatcher("/Logout.html");
+//				rd.forward(request, response);
+				Cookie loginCookie = new Cookie("user1",username);
+				
+				loginCookie.setMaxAge(30*60);
+				response.addCookie(loginCookie);
+				response.sendRedirect("index2.jsp");
+				
 			} else { // System.out.println(" Error!");
 				RequestDispatcher rd = request.getRequestDispatcher("/index.html");
 				rd.include(request, response);
